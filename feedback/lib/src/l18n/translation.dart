@@ -336,18 +336,33 @@ class EsFeedbackLocalizations extends FeedbackLocalizations {
   String get navigate => 'Navegar';
 }
 
+class ViFeedbackLocalizations extends FeedbackLocalizations {
+  /// Tiếng Việt
+  const ViFeedbackLocalizations();
+
+  @override
+  String get submitButtonText => 'Gửi';
+
+  @override
+  String get feedbackDescriptionText => 'Bạn gặp lỗi gì ?';
+
+  @override
+  String get draw => 'Vẽ';
+
+  @override
+  String get navigate => 'Chuyển màn';
+}
+
 // coverage:ignore-end
 
 /// This is a localization delegate, which includes all of the localizations
 /// already present in this library.
-class GlobalFeedbackLocalizationsDelegate
-    extends LocalizationsDelegate<FeedbackLocalizations> {
+class GlobalFeedbackLocalizationsDelegate extends LocalizationsDelegate<FeedbackLocalizations> {
   /// Creates a [GlobalFeedbackLocalizationsDelegate].
   GlobalFeedbackLocalizationsDelegate();
 
   /// Returns the default instance of a [GlobalFeedbackLocalizationsDelegate].
-  static LocalizationsDelegate<FeedbackLocalizations> delegate =
-      GlobalFeedbackLocalizationsDelegate();
+  static LocalizationsDelegate<FeedbackLocalizations> delegate = GlobalFeedbackLocalizationsDelegate();
 
   /// Returns a dict of all supported locales.
   /// Override this member to provide your own localized strings.
@@ -368,6 +383,7 @@ class GlobalFeedbackLocalizationsDelegate
     const Locale('bg'): const BgFeedbackLocalizations(),
     const Locale('es'): const EsFeedbackLocalizations(),
     const Locale('fa'): const FaFeedbackLocalizations(),
+    const Locale('vi'): const ViFeedbackLocalizations(),
   };
 
   /// The default locale to use. Note that this locale should ALWAYS be
